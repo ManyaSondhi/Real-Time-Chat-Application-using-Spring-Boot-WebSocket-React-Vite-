@@ -1,104 +1,49 @@
 # 📡 Real-Time Chat Application using Spring Boot WebSocket & React (Vite)
 
 ## 📌 Experiment Title
-**Implementation of Real-Time Chat System using WebSockets (STOMP Protocol) with Spring Boot and React**
+Implementation of Real-Time Chat System using WebSockets (STOMP Protocol) with Spring Boot and React
 
 ---
 
 ## 📖 Description
-This experiment demonstrates the development of a **real-time chat application** using Spring Boot WebSocket on the backend and React (Vite) on the frontend.
+This project demonstrates a real-time chat application using Spring Boot (WebSocket) and React (Vite).
 
-The system enables multiple clients to communicate instantly without refreshing the page by establishing a persistent **WebSocket connection**. Communication follows the **STOMP (Simple Text Oriented Messaging Protocol)** over WebSocket.
-
-Messages sent by one user are broadcast to all connected users via a message broker.
+It enables multiple users to communicate instantly using WebSocket and STOMP protocol without refreshing the page.
 
 ---
 
 ## 🎯 Objectives
 - Understand WebSocket communication  
-- Implement STOMP protocol in Spring Boot  
-- Enable real-time messaging between multiple clients  
-- Integrate frontend (React) with backend WebSocket server  
+- Implement STOMP protocol  
+- Enable real-time messaging  
+- Integrate React with Spring Boot  
 
 ---
 
 ## 🏗️ System Architecture
 
-### 🔹 Backend (Spring Boot)
-
-**WebSocketConfig.java**
-- Enables WebSocket message broker  
-- Defines:
-  - `/app` → client sends messages  
-  - `/topic` → server broadcasts messages  
+### Backend (Spring Boot)
+- `/app` → client sends messages  
+- `/topic` → server broadcasts messages  
 - Endpoint: `/ws`  
 
-**ChatController.java**
-- Handles incoming messages (`/app/chat`)  
-- Broadcasts to `/topic/messages`  
-
-**Message.java**
-- Model class with:
-  - `sender`
-  - `content`
-
-**DemoWebSocketApplication.java**
-- Main Spring Boot application  
+### Frontend (React + Vite)
+- Chat UI using React  
+- Uses SockJS + STOMP.js  
 
 ---
 
-### 🔹 Frontend (React + Vite)
+## ▶️ How to Run
 
-- Uses WebSocket/STOMP client  
-
-**Components:**
-- `Chat.jsx` → Main chat UI  
-- `MessageInput.jsx` → Input field  
-- `MessageList.jsx` → Display messages  
-
-**Polyfills used:**
-```js
-window.global = window;
-window.Buffer = Buffer;
-window.process = process;
-```
-🔄 Working Flow
-
-Client connects to WebSocket endpoint:
-
-http://localhost:8080/ws
-
-Client sends message to:
-
-/app/chat
-
-Spring Boot processes message via:
-
-@MessageMapping("/chat")
-
-Message is broadcast to:
-
-/topic/messages
-All subscribed clients receive the message instantly
-⚙️ Technologies Used
-🔹 Backend
-Java
-Spring Boot
-WebSocket
-STOMP Protocol
-🔹 Frontend
-React (Vite)
-JavaScript
-SockJS
-STOMP.js
-▶️ How to Run the Project
-🔹 Backend
+### Backend
+```bash
 mvn spring-boot:run
+```
 
-Server starts at:
+Server:
 http://localhost:8080
 
-🔹 Frontend
+Frontend
 cd websocket
 npm install
 npm run dev
@@ -107,51 +52,41 @@ Open:
 http://localhost:5173
 
 📊 Output
-Users can send messages in real-time
-Messages are instantly visible to all connected clients
+Real-time messaging
+Multiple users supported
 No page refresh required
-📸 Screenshots
 
-The following screenshots demonstrate real-time communication between multiple clients along with server-side message handling.
+## 📸 Screenshots
 
-🔹 Chat Interface (User 1)
+### 🔹 Chat Interface (User 1)
+[![User 1](./screenshots/chat-interface-user1.png)](./screenshots/chat-interface-user1.png)
 
-User "Sakshi" sending messages
-Real-time chat functionality
+---
 
-🔹 Chat Interface (User 2)
+### 🔹 Chat Interface (User 2)
+[![User 2](./screenshots/chat-interface-user2.png)](./screenshots/chat-interface-user2.png)
 
-User "Manya" receiving messages
-Demonstrates multi-user communication
+---
 
-
-🔹 Backend Console Output
-
-Displays messages received on the server
-Confirms WebSocket communication is working
+### 🔹 Backend Console Output
+[![Console](./screenshots/backend-console-output.png)](./screenshots/backend-console-output.png)
+Server logs showing message handling.
 
 
 
 📁 Project Structure
+
 Demo_WebSocket/
 ├── screenshots/
 │   ├── chat-interface-user1.png
 │   ├── chat-interface-user2.png
 │   └── backend-console-output.png
 ├── README.md
-├── backend (Spring Boot)
-└── frontend (React - Vite)
 
-
-📌 Key Concepts Learned
-
+📌 Key Concepts
 WebSocket vs HTTP
-STOMP messaging protocol
+STOMP protocol
 Publish-Subscribe model
-Real-time frontend-backend integration
+🚀 Conclusion
 
-
-#🚀 Conclusion
-
-This experiment successfully demonstrates how to build a low-latency, real-time communication system using WebSockets. It highlights the efficiency of persistent connections over traditional request-response models and showcases modern full-stack integration using Spring Boot and React.
-
+This project demonstrates a real-time chat system using WebSockets with efficient communication between multiple users.
