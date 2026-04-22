@@ -1,0 +1,149 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* Page Background */
+body {
+  background: #f4f6fb;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Chat Container */
+.chat-container {
+  width: 420px;
+  height: 620px;
+  background: #ffffff;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* Header */
+.chat-header {
+  padding: 16px;
+  background: #ffffff;
+  border-bottom: 1px solid #e6e8ec;
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  text-align: center;
+}
+
+/* Messages Area */
+.message-list {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background: #f9fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Message Bubble Base */
+.message {
+  max-width: 75%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+/* Sent Message (You) */
+.message.self {
+  align-self: flex-end;
+  background: #4f7cff;
+  color: #ffffff;
+  border-bottom-right-radius: 6px;
+}
+
+/* Received Message */
+.message.other {
+  align-self: flex-start;
+  background: #eef1f6;
+  color: #222;
+  border-bottom-left-radius: 6px;
+}
+
+/* Sender Name */
+.message .sender {
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #666;
+}
+
+/* Input Section */
+.message-input-container {
+  display: flex;
+  padding: 12px;
+  border-top: 1px solid #e6e8ec;
+  background: #ffffff;
+}
+
+/* Input Field */
+.message-input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #dcdfe5;
+  font-size: 14px;
+  outline: none;
+  color: #222;
+  background: #fff;
+}
+
+.message-input::placeholder {
+  color: #999;
+}
+
+/* Input Focus */
+.message-input:focus {
+  border-color: #4f7cff;
+  box-shadow: 0 0 0 2px rgba(79, 124, 255, 0.15);
+}
+
+/* Send Button */
+.send-button {
+  margin-left: 10px;
+  padding: 10px 16px;
+  background: #4f7cff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.send-button:hover {
+  background: #3b66e0;
+}
+
+/* Smooth Scrollbar */
+.message-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.message-list::-webkit-scrollbar-thumb {
+  background: #d0d5dd;
+  border-radius: 10px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 500px) {
+  .chat-container {
+    width: 95%;
+    height: 90%;
+  }
+}
