@@ -123,10 +123,15 @@ Real-time chat functionality
 
 User "Manya" receiving messages
 Demonstrates multi-user communication
+
+
 🔹 Backend Console Output
 
 Displays messages received on the server
 Confirms WebSocket communication is working
+
+
+
 📁 Project Structure
 Demo_WebSocket/
 ├── screenshots/
@@ -136,14 +141,17 @@ Demo_WebSocket/
 ├── README.md
 ├── backend (Spring Boot)
 └── frontend (React - Vite)
+
+
 📌 Key Concepts Learned
+
 WebSocket vs HTTP
 STOMP messaging protocol
 Publish-Subscribe model
 Real-time frontend-backend integration
-🚀 Conclusion
+
+
+#🚀 Conclusion
 
 This experiment successfully demonstrates how to build a low-latency, real-time communication system using WebSockets. It highlights the efficiency of persistent connections over traditional request-response models and showcases modern full-stack integration using Spring Boot and React.
-window.global = window;
-window.Buffer = Buffer;
-window.process = process;
+
