@@ -78,15 +78,24 @@ Server logs showing message handling.
 
 Demo_WebSocket/
 ├── screenshots/
+
 │   ├── chat-interface-user1.png
+
 │   ├── chat-interface-user2.png
+
 │   └── backend-console-output.png
+
 ├── README.md
 
 📌 Key Concepts
+
 WebSocket vs HTTP
+
 STOMP protocol
+
 Publish-Subscribe model
+
+
 🚀 Conclusion
 
 This project demonstrates a real-time chat system using WebSockets with efficient communication between multiple users.
